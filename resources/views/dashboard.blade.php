@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Burung - Home</title>
+    <title>Burung - Dashboard</title>
     <link rel="preconnect" href="<https://fonts.bunny.net>">
     <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600,700" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
@@ -23,10 +23,10 @@
         <div class="navbar-start">
             <a href="/" class="btn btn-ghost text-xl">🐦 Burung</a>
         </div>
-        <div class="navbar-end gap-2">
-            <a href="/login" class="btn btn-ghost btn-sm">Login</a>
-            <a href="/dashboard" class="btn btn-primary btn-sm">Dashboard</a>
-        </div>
+        <!-- <div class="navbar-end gap-2">
+            <a href="#" class="btn btn-ghost btn-sm">Sign In</a>
+            <a href="#" class="btn btn-primary btn-sm">Sign Up</a>
+        </div> -->
     </nav>
 
     <main class="flex-1 container mx-auto px-4 py-8">
@@ -34,7 +34,7 @@
             <div class="card bg-base-100 shadow mt-8">
                 <div class="card-body">
                     <div>
-                        <h1 class="text-3xl font-bold">Welcome to Burung!</h1>
+                        <h1 class="text-3xl font-bold">Welcome to Dashboard Burung!</h1>
                         <p class="mt-4 text-base-content/60">This is your brand new Laravel application. Time to make it sing (or chirp)!</p>
                     </div>
                 </div>
