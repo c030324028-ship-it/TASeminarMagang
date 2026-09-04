@@ -1,6 +1,6 @@
 <nav class="w-full bg-orange-400/60 backdrop-blur-md flex justify-between items-center px-8 py-4 sticky top-0 z-50 shadow-sm transition-all">
     <div class="w-17 h-24 overflow-hidden flex-shrink-0 ml-8">
-        <img src="assets/images/logo-bkn-new.png" alt="Logo Instansi" class="w-full h-full object-cover">
+        <a href="/"><img src="assets/images/logo-bkn.png" alt="Logo Instansi" class="w-full h-full object-cover"></a>
     </div>
 
     <div class="flex items-center space-x-3">
@@ -37,5 +37,5 @@
         </div>
     </div>
 
-    <button class="px-7 py-2 border-2 border-white text-white text-lg font-medium rounded-lg transition-all duration-300 hover:border-orange-500 hover:text-orange-500 hover:bg-white/80">Login</button>
+    <a class="px-7 py-2 border-2 border-white text-white text-lg font-medium rounded-lg transition-all duration-300 hover:border-orange-500 hover:text-orange-500 hover:bg-white/80" href="/login">Login</a>
 </nav>

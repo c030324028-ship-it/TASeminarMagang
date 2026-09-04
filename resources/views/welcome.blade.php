@@ -32,7 +32,8 @@
     </div>
 
     <section class="mb-16 scroll-mt-28 bg-gray-50 border-2 border-black p-8 rounded-xl shadow-sm" id="kalender">
-        <h2 class="text-3xl font-medium mb-6 text-center">Jadwal Seleksi</h2>
+        <x-kalender></x-kalender>
+        <!-- <h2 class="text-3xl font-medium mb-6 text-center">Jadwal Seleksi</h2>
         <div class="border-2 border-black bg-white p-3 flex justify-between items-center mb-6">
             <div class="flex items-center gap-4">
                 <button class="hover:text-gray-600 transition"><svg class="w-6 h-6 font-bold" fill="none" stroke="currentColor" stroke-width="4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg></button>
@@ -63,7 +64,7 @@
                 @endfor
                 <div class="text-gray-400 p-1 flex items-center justify-center">1</div><div class="text-gray-400 p-1 flex items-center justify-center">2</div><div class="text-gray-400 p-1 flex items-center justify-center">3</div><div class="text-gray-400 p-1 flex items-center justify-center">4</div>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <section class="mb-16 scroll-mt-28 bg-gray-100 border-2 border-black p-8 rounded-xl shadow-sm" id="publikasi">
@@ -92,7 +93,7 @@
                         <a href="#" class="font-medium hover:underline">Panduan Penggunaan Sistem CAT 2026</a>
                     </div>
                 </div>
-                <button class="w-full py-2 border-2 border-black font-medium hover:bg-gray-100 mt-auto">Lihat Semua</button>
+                <button class="w-full py-2 border-2 border-black font-medium hover:bg-gray-100 mt-auto" onclick="window.location.assign('/news')">Lihat Semua</button>
             </div>
 
             <div class="md:w-[65%] flex flex-col gap-6">
