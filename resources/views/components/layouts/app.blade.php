@@ -10,7 +10,7 @@
     
     <x-navbar />
 
-    <main class="flex-grow w-full max-w-[1400px] mx-auto px-4">
+    <main class="flex-grow w-full">
         {{ $slot }}
     </main>
 
