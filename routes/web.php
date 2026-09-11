@@ -1,13 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AppController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('login');
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login', [AppController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [AppController::class, 'login'])->name('login.perform');
 });
 
 Route::get('/dashboard', function () {

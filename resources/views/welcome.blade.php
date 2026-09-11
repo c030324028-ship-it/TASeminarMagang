@@ -23,125 +23,88 @@
         }
     </style>
 
-    <div class="flex flex-col justify-start mb-16 pt-4 w-full">
-        <header class="text-center pb-4 pt-2 max-w-[1400px] mx-auto w-full px-4">
-            <h1 class="text-4xl font-medium mb-2">Portal Informasi Karir</h1>
-            <p class="text-xl text-gray-800">Sistem Informasi Seleksi Terpadu</p>
-        </header>
-
-        <section class="relative w-full overflow-hidden group mb-6 min-h-[350px] md:min-h-[450px]">
-            <div id="carouselSlider" class="flex w-full h-full absolute inset-0 transition-transform duration-700 ease-in-out">
-                <!-- [CLONE] Slide 3 -->
-                <div class="slide-item w-[70%] h-full flex-shrink-0 transition-all duration-700 opacity-50 scale-95">
-                    <div class="w-full h-full border-2 border-black rounded-xl shadow-sm relative overflow-hidden bg-gray-600 flex items-center justify-center">
-                        <img src="assets/images/sample-carousel3.jpg" alt="Slide 3" class="absolute inset-0 w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/40"></div>
-                        <span class="relative z-10 font-medium text-white text-2xl md:text-4xl text-center p-6">Headline Berita Utama 3</span>
-                    </div>
-                </div>
-                <!-- [REAL] Slide 1 -->
-                <div class="slide-item w-[70%] h-full flex-shrink-0 transition-all duration-700 opacity-100 scale-100">
-                    <div class="w-full h-full border-2 border-black rounded-xl shadow-sm relative overflow-hidden bg-gray-200 flex items-center justify-center">
-                        <img src="assets/images/sample-carousel1.jpg" alt="Slide 1" class="absolute inset-0 w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/30"></div>
-                        <span class="relative z-10 font-medium text-white text-2xl md:text-4xl text-center p-6">Headline Berita Utama 1</span>
-                    </div>
-                </div>
-                <!-- [REAL] Slide 2 -->
-                <div class="slide-item w-[70%] h-full flex-shrink-0 transition-all duration-700 opacity-50 scale-95">
-                    <div class="w-full h-full border-2 border-black rounded-xl shadow-sm relative overflow-hidden bg-gray-400 flex items-center justify-center">
-                        <img src="assets/images/sample-carousel2.jpg" alt="Slide 2" class="absolute inset-0 w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/40"></div>
-                        <span class="relative z-10 font-medium text-white text-2xl md:text-4xl text-center p-6">Headline Berita Utama 2</span>
-                    </div>
-                </div>
-                <!-- [REAL] Slide 3 -->
-                <div class="slide-item w-[70%] h-full flex-shrink-0 transition-all duration-700 opacity-50 scale-95">
-                    <div class="w-full h-full border-2 border-black rounded-xl shadow-sm relative overflow-hidden bg-gray-600 flex items-center justify-center">
-                        <img src="assets/images/sample-carousel3.jpg" alt="Slide 3" class="absolute inset-0 w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/40"></div>
-                        <span class="relative z-10 font-medium text-white text-2xl md:text-4xl text-center p-6">Headline Berita Utama 3</span>
-                    </div>
-                </div>
-                <!-- [CLONE] Slide 1 -->
-                <div class="slide-item w-[70%] h-full flex-shrink-0 transition-all duration-700 opacity-50 scale-95">
-                    <div class="w-full h-full border-2 border-black rounded-xl shadow-sm relative overflow-hidden bg-gray-200 flex items-center justify-center">
-                        <img src="assets/images/sample-carousel1.jpg" alt="Slide 1" class="absolute inset-0 w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-black/30"></div>
-                        <span class="relative z-10 font-medium text-white text-2xl md:text-4xl text-center p-6">Headline Berita Utama 1</span>
-                    </div>
+    <!-- SECTION CAROUSEL FULL WIDTH (NAVBAR TRANSPARAN DI ATASNYA) -->
+    <section id="hero-section" class="relative w-full overflow-hidden group mb-16 h-[480px] md:h-[620px] bg-black">
+        <div id="carouselSlider" class="flex w-full h-full absolute inset-0 transition-transform duration-700 ease-in-out">
+            
+            <!-- [CLONE] Slide 3 -->
+            <div class="slide-item w-full h-full flex-shrink-0 relative overflow-hidden bg-gray-800">
+                <img src="assets/images/sample-carousel3.jpg" alt="Slide 3" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20"></div>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-10 pt-20">
+                    <h2 class="font-bold text-white text-3xl md:text-5xl drop-shadow-lg">Headline Berita Utama 3</h2>
                 </div>
             </div>
 
-            <button id="btnPrev" class="absolute left-0 top-0 bottom-0 w-[15%] bg-gradient-to-r from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white cursor-pointer z-20 outline-none border-none">
-                <svg class="w-12 h-12 md:w-16 md:h-16 drop-shadow-md" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
-            </button>
-            <button id="btnNext" class="absolute right-0 top-0 bottom-0 w-[15%] bg-gradient-to-l from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white cursor-pointer z-20 outline-none border-none">
-                <svg class="w-12 h-12 md:w-16 md:h-16 drop-shadow-md" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
-            </button>
-
-            <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-3 z-30" id="carouselDots">
-                <button class="dot w-3.5 h-3.5 md:w-4 md:h-4 rounded-full border-2 border-white bg-black transition-all transform scale-125 shadow-md" onclick="goToSlide(1)"></button>
-                <button class="dot w-3.5 h-3.5 md:w-4 md:h-4 rounded-full border-2 border-white bg-white/60 hover:bg-white transition-all shadow-md" onclick="goToSlide(2)"></button>
-                <button class="dot w-3.5 h-3.5 md:w-4 md:h-4 rounded-full border-2 border-white bg-white/60 hover:bg-white transition-all shadow-md" onclick="goToSlide(3)"></button>
+            <!-- [REAL] Slide 1: HERO UTAMA (Judul Laman) -->
+            <div class="slide-item w-full h-full flex-shrink-0 relative overflow-hidden bg-gray-900">
+                <img src="assets/images/sample-carousel1.jpg" alt="Slide 1" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30"></div>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-10 pt-20">
+                    <h1 class="text-4xl md:text-6xl font-black text-white mb-3 tracking-tight drop-shadow-md">Portal Informasi Karir</h1>
+                    <p class="text-lg md:text-2xl text-gray-200 font-medium max-w-2xl drop-shadow">Sistem Informasi Seleksi Terpadu</p>
+                </div>
             </div>
-        </section>
-    </div>
 
+            <!-- [REAL] Slide 2 -->
+            <div class="slide-item w-full h-full flex-shrink-0 relative overflow-hidden bg-gray-800">
+                <img src="assets/images/sample-carousel2.jpg" alt="Slide 2" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20"></div>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-10 pt-20">
+                    <h2 class="font-bold text-white text-3xl md:text-5xl drop-shadow-lg">Headline Berita Utama 2</h2>
+                </div>
+            </div>
+
+            <!-- [REAL] Slide 3 -->
+            <div class="slide-item w-full h-full flex-shrink-0 relative overflow-hidden bg-gray-800">
+                <img src="assets/images/sample-carousel3.jpg" alt="Slide 3" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20"></div>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-10 pt-20">
+                    <h2 class="font-bold text-white text-3xl md:text-5xl drop-shadow-lg">Headline Berita Utama 3</h2>
+                </div>
+            </div>
+
+            <!-- [CLONE] Slide 1 -->
+            <div class="slide-item w-full h-full flex-shrink-0 relative overflow-hidden bg-gray-900">
+                <img src="assets/images/sample-carousel1.jpg" alt="Slide 1" class="absolute inset-0 w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30"></div>
+                <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-10 pt-20">
+                    <h1 class="text-4xl md:text-6xl font-black text-white mb-3 tracking-tight drop-shadow-md">Portal Informasi Karir</h1>
+                    <p class="text-lg md:text-2xl text-gray-200 font-medium max-w-2xl drop-shadow">Sistem Informasi Seleksi Terpadu</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Tombol Navigasi Carousel -->
+        <button id="btnPrev" class="absolute left-0 top-0 bottom-0 w-[10%] bg-gradient-to-r from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white cursor-pointer z-20 outline-none border-none">
+            <svg class="w-10 h-10 md:w-14 md:h-14 drop-shadow-md" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button id="btnNext" class="absolute right-0 top-0 bottom-0 w-[10%] bg-gradient-to-l from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center text-white cursor-pointer z-20 outline-none border-none">
+            <svg class="w-10 h-10 md:w-14 md:h-14 drop-shadow-md" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+
+        <!-- Indicator Dots -->
+        <div class="absolute bottom-6 left-0 right-0 flex justify-center gap-3 z-30" id="carouselDots">
+            <button class="dot w-3.5 h-3.5 md:w-4 md:h-4 rounded-full border-2 border-white bg-white transition-all transform scale-125 shadow-md" onclick="goToSlide(1)"></button>
+            <button class="dot w-3.5 h-3.5 md:w-4 md:h-4 rounded-full border-2 border-white bg-white/50 hover:bg-white transition-all shadow-md" onclick="goToSlide(2)"></button>
+            <button class="dot w-3.5 h-3.5 md:w-4 md:h-4 rounded-full border-2 border-white bg-white/50 hover:bg-white transition-all shadow-md" onclick="goToSlide(3)"></button>
+        </div>
+    </section>
+
+    <!-- SECTION AGENDA & KALENDER -->
     <section class="mb-16 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28" id="kalender">
         <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-black pb-2">Agenda & Jadwal Kegiatan</h2>
         <x-kalender />
     </section>
 
-    <section class="mb-16 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28 bg-gray-100 border-2 border-black p-6 md:p-8 rounded-xl shadow-sm" id="publikasi">
+    <!-- SECTION PUSAT INFORMASI -->
+    <section class="mb-16 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28" id="publikasi">
         <h2 class="text-3xl font-medium mb-6 text-center">Pusat Informasi</h2>
-        <div class="flex gap-4 mb-6 overflow-x-auto pb-2">
-            <button class="wire-box flex-1 py-4 px-4 bg-white font-medium hover:bg-gray-50 transition border-2 border-black whitespace-nowrap">Berita Terkini</button>
-            <button class="wire-box flex-1 py-4 px-4 bg-white font-medium hover:bg-gray-50 transition border-2 border-black whitespace-nowrap">Pengumuman Resmi</button>
-            <button class="wire-box flex-1 py-4 px-4 bg-white font-medium hover:bg-gray-50 transition border-2 border-black whitespace-nowrap">Agenda Kegiatan</button>
-            <button class="wire-box flex-1 py-4 px-4 bg-white font-medium hover:bg-gray-50 transition border-2 border-black whitespace-nowrap">Pusat Unduhan</button>
-        </div>
-        
-        <div class="flex flex-col md:flex-row gap-6">
-            <div class="wire-box md:w-[35%] bg-white p-6 flex flex-col gap-4 min-h-[450px] border-2 border-black">
-                <h3 class="text-xl font-bold border-b-2 border-black pb-2">Pengumuman Terbaru</h3>
-                <div class="flex flex-col gap-3 flex-grow">
-                    <div class="border-l-4 border-gray-600 pl-3">
-                        <p class="text-sm text-gray-500">12 Agustus 2026</p>
-                        <a href="#" class="font-medium hover:underline">Hasil Seleksi Administrasi Tahap 1</a>
-                    </div>
-                    <div class="border-l-4 border-gray-600 pl-3">
-                        <p class="text-sm text-gray-500">08 Agustus 2026</p>
-                        <a href="#" class="font-medium hover:underline">Jadwal Pengambilan Kartu Ujian</a>
-                    </div>
-                    <div class="border-l-4 border-gray-600 pl-3">
-                        <p class="text-sm text-gray-500">01 Agustus 2026</p>
-                        <a href="#" class="font-medium hover:underline">Panduan Penggunaan Sistem CAT 2026</a>
-                    </div>
-                </div>
-                <button class="w-full py-2 border-2 border-black font-medium hover:bg-gray-100 mt-auto" onclick="window.location.assign('/news')">Lihat Semua</button>
-            </div>
-
-            <div class="md:w-[65%] flex flex-col gap-6">
-                <div class="wire-box bg-gray-200 h-[250px] flex items-center justify-center text-xl text-gray-600 border-2 border-black">
-                    [Placeholder Gambar Utama / Banner Pengumuman]
-                </div>
-                <div class="wire-box bg-white p-6 flex-grow border-2 border-black">
-                    <h3 class="text-2xl font-bold mb-2">Persiapan Mengikuti Seleksi Kompetensi Dasar (SKD)</h3>
-                    <p class="text-sm text-gray-500 mb-4">Dipublikasikan oleh Panitia Pusat - 10 Agustus 2026</p>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Menjelang pelaksanaan Seleksi Kompetensi Dasar (SKD) tahun 2026, seluruh peserta diwajibkan untuk mempersiapkan dokumen identitas asli berupa KTP dan Kartu Peserta Ujian yang dicetak berwarna.
-                    </p>
-                    <ul class="list-disc pl-5 space-y-1 text-gray-700 text-sm">
-                        <li>Hadir 90 menit sebelum jadwal sesi dimulai.</li>
-                        <li>Mengenakan kemeja putih polos dan celana/rok kain hitam.</li>
-                        <li>Dilarang membawa alat elektronik, perhiasan, maupun ikat pinggang ke dalam ruang ujian.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <x-publikasi />
     </section>
 
+    <!-- SECTION TIMELINE -->
     <section class="mb-16 w-full scroll-mt-28 bg-gray-200 border-y-2 border-black py-12 md:py-16 shadow-sm" id="timeline">
         <div class="max-w-[1400px] mx-auto w-full px-4">
             <div class="text-center mb-12 md:mb-16">
@@ -182,6 +145,7 @@
         </div>
     </section>
 
+    <!-- SECTION KONTAK -->
     <section class="mb-10 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28 bg-gray-300 border-2 border-black p-6 md:p-8 rounded-xl shadow-sm" id="kontak">
         <h2 class="text-3xl font-medium mb-8 text-center">Hubungi Kami</h2>
         <div class="flex flex-wrap justify-center gap-6">
@@ -208,23 +172,40 @@
         </div>
     </section>
 
+    <!-- SCRIPT CAROUSEL & SCROLL NAVBAR -->
     <script>
-        // Carousel
         document.addEventListener('DOMContentLoaded', () => {
+            // TRANSISI NAVBAR TRANSPARAN KE SOLID
+            const navbar = document.getElementById('main-navbar');
+            const heroSection = document.getElementById('hero-section');
+
+            if (navbar && heroSection) {
+                window.addEventListener('scroll', () => {
+                    const heroHeight = heroSection.offsetHeight - 80;
+
+                    if (window.scrollY > heroHeight) {
+                        navbar.classList.remove('bg-transparent', 'py-4');
+                        navbar.classList.add('bg-[#fca855]', 'shadow-md', 'py-2');
+                    } else {
+                        navbar.classList.add('bg-transparent', 'py-4');
+                        navbar.classList.remove('bg-[#fca855]', 'shadow-md', 'py-2');
+                    }
+                });
+            }
+
+            // CAROUSEL
             let currentSlide = 1;
             let isTransitioning = false;
             const totalRealSlides = 3;
             const slider = document.getElementById('carouselSlider');
             const dots = document.querySelectorAll('.dot');
-            const slides = document.querySelectorAll('.slide-item');
             let autoPlayInterval;
 
-            const disableTransitions = () => { slider.style.transitionDuration = '0ms'; slides.forEach(s => s.style.transitionDuration = '0ms'); };
-            const enableTransitions = () => { slider.style.transitionDuration = ''; slides.forEach(s => s.style.transitionDuration = ''); };
+            const disableTransitions = () => { slider.style.transitionDuration = '0ms'; };
+            const enableTransitions = () => { slider.style.transitionDuration = ''; };
 
             const setTransform = (index) => {
-                const translateValue = 15 - (index * 70);
-                slider.style.transform = `translateX(${translateValue}%)`;
+                slider.style.transform = `translateX(-${index * 100}%)`;
             };
 
             const updateVisuals = (index) => {
@@ -233,13 +214,13 @@
                 if (dotIndex >= totalRealSlides) dotIndex = 0;
 
                 dots.forEach((dot, idx) => {
-                    if (idx === dotIndex) { dot.classList.add('bg-black', 'scale-125'); dot.classList.remove('bg-white/60'); }
-                    else { dot.classList.remove('bg-black', 'scale-125'); dot.classList.add('bg-white/60'); }
-                });
-
-                slides.forEach((slide, idx) => {
-                    if (idx === index) { slide.classList.remove('opacity-50', 'scale-95'); slide.classList.add('opacity-100', 'scale-100'); }
-                    else { slide.classList.add('opacity-50', 'scale-95'); slide.classList.remove('opacity-100', 'scale-100'); }
+                    if (idx === dotIndex) { 
+                        dot.classList.add('bg-white', 'scale-125'); 
+                        dot.classList.remove('bg-white/50'); 
+                    } else { 
+                        dot.classList.remove('bg-white', 'scale-125'); 
+                        dot.classList.add('bg-white/50'); 
+                    }
                 });
             };
 
@@ -255,15 +236,26 @@
             slider.addEventListener('transitionend', (e) => {
                 if (e.target !== slider) return;
                 isTransitioning = false;
-                if (currentSlide === 0) { currentSlide = totalRealSlides; disableTransitions(); setTransform(currentSlide); updateVisuals(currentSlide); void slider.offsetWidth; } 
-                else if (currentSlide === totalRealSlides + 1) { currentSlide = 1; disableTransitions(); setTransform(currentSlide); updateVisuals(currentSlide); void slider.offsetWidth; }
+                if (currentSlide === 0) { 
+                    currentSlide = totalRealSlides; 
+                    disableTransitions(); 
+                    setTransform(currentSlide); 
+                    updateVisuals(currentSlide); 
+                    void slider.offsetWidth; 
+                } else if (currentSlide === totalRealSlides + 1) { 
+                    currentSlide = 1; 
+                    disableTransitions(); 
+                    setTransform(currentSlide); 
+                    updateVisuals(currentSlide); 
+                    void slider.offsetWidth; 
+                }
             });
 
             window.goToSlide = (realIndex) => { if (!isTransitioning) { moveToIndex(realIndex); resetInterval(); } };
             document.getElementById('btnNext').addEventListener('click', () => { if (!isTransitioning) { moveToIndex(currentSlide + 1); resetInterval(); } });
             document.getElementById('btnPrev').addEventListener('click', () => { if (!isTransitioning) { moveToIndex(currentSlide - 1); resetInterval(); } });
 
-            const startInterval = () => { autoPlayInterval = setInterval(() => moveToIndex(currentSlide + 1), 5000); };
+            const startInterval = () => { autoPlayInterval = setInterval(() => moveToIndex(currentSlide + 1), 6000); };
             const resetInterval = () => { clearInterval(autoPlayInterval); startInterval(); };
 
             disableTransitions();
@@ -272,6 +264,5 @@
             void slider.offsetWidth; 
             startInterval();
         });
-        
     </script>
 </x-layouts.app>

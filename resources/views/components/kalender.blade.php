@@ -84,7 +84,6 @@
     </div>
 </div>
 
-<!-- MODAL dan POPUP -->
 <div id="calendarModalOverlay" class="hidden fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 transition-opacity duration-300">
     <div class="bg-white w-full max-w-[95vw] md:max-w-7xl max-h-[95vh] rounded-2xl shadow-2xl flex flex-col relative overflow-hidden transform scale-100 transition-transform">
         <div class="flex-shrink-0 p-6 border-b border-gray-200 flex justify-between items-center bg-white z-20">
@@ -99,26 +98,47 @@
     </div>
 </div>
 
-<div id="eventDetailPopup" class="hidden absolute z-[150] bg-white border-2 border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] w-64 transform transition-all pb-2">
-    <div class="px-4 py-3 border-b-2 border-gray-100 flex justify-between items-center mb-1">
-        <span id="popupDateText" class="text-sm font-bold text-gray-800"></span>
-        <button id="btnClosePopup" class="text-gray-400 hover:text-black transition-colors">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+<div id="dayEventsModal" class="hidden fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity">
+    <div class="relative w-full max-w-lg bg-white border-2 border-black rounded-xl p-5 shadow-[4px_4px_0_0_rgba(0,0,0,1)]">
+        <button id="btnCloseDayModal" class="absolute top-4 right-4 p-1 text-gray-400 hover:text-black transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
+        <h3 id="dayModalTitle" class="text-lg font-bold text-gray-900 border-b-2 border-gray-100 pb-3 mb-4 pr-8">Daftar Kegiatan</h3>
+        <div id="dayModalListContainer" class="max-h-[350px] overflow-y-auto space-y-3 custom-scrollbar pr-2">
+            <!-- Diisi dinamis lewat script JS -->
+        </div>
     </div>
-    <div id="popupEventList" class="px-3 space-y-2 max-h-48 overflow-y-auto custom-scrollbar pt-1"></div>
+</div>
+
+<div id="eventDetailModal" class="hidden fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity">
+    <div class="relative w-full max-w-md bg-white border-2 border-black rounded-xl p-5 shadow-[4px_4px_0_0_rgba(0,0,0,1)]">
+        <button id="btnCloseDetailModal" class="absolute top-4 right-4 p-1 text-gray-400 hover:text-black transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <h3 class="text-lg font-bold text-gray-900 border-b-2 border-gray-100 pb-3 mb-4 pr-8">Detail Kegiatan</h3>
+        <div class="space-y-3 text-sm text-gray-800 bg-gray-50 p-4 border border-gray-200 rounded-lg">
+            <p><span class="font-bold">Nama Kegiatan:</span> <span id="dtNama">-</span></p>
+            <p><span class="font-bold">Kategori:</span> <span id="dtKategori" class="capitalize">-</span></p>
+            <p><span class="font-bold">Tanggal:</span> <span id="dtTanggal">-</span></p>
+            <p><span class="font-bold">Lokasi:</span> <span id="dtLokasi">-</span></p>
+            <p><span class="font-bold">Status:</span> <span id="dtStatus">-</span></p>
+        </div>
+        <div class="mt-5 flex justify-end">
+            <button id="btnBackToDayModal" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 border-2 border-black rounded-lg text-sm font-bold transition-colors">Tutup</button>
+        </div>
+    </div>
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const eventsData = [
-            { id: 1, title: 'Buka Pendaftaran', startDay: 1, endDay: 2, month: 8, year: 2026, category: 'pendaftaran', color: 'bg-[#D0E2FF] text-[#0043CE] border-2 border-black' },
-            { id: 2, title: 'Hasil SKD CPNS', startDay: 7, endDay: 7, month: 8, year: 2026, category: 'pengumuman', color: 'bg-[#D9D9D9] text-black border-2 border-black' },
-            { id: 3, title: 'Ambil Kartu', startDay: 8, endDay: 8, month: 8, year: 2026, category: 'ujian', color: 'bg-[#FFD8B2] text-[#8A3B00] border-2 border-black' },
-            { id: 4, title: 'Hasil Ujian Dinas', startDay: 9, endDay: 9, month: 8, year: 2026, category: 'pengumuman', color: 'bg-[#008767] text-white border-2 border-black' },
-            { id: 5, title: 'Hasil Tahap 1', startDay: 12, endDay: 12, month: 8, year: 2026, category: 'pengumuman', color: 'bg-[#C1F1D2] text-[#00512C] border-2 border-black' },
-            { id: 6, title: 'Hasil Seleksi PPPK', startDay: 14, endDay: 14, month: 8, year: 2026, category: 'pengumuman', color: 'bg-[#0D1B2A] text-white border-2 border-black' },
-            { id: 7, title: 'Seminar Umum', startDay: 14, endDay: 16, month: 8, year: 2026, category: 'pendaftaran', color: 'bg-[#0077C0] text-white border-2 border-black' }
+            { id: 1, title: 'Buka Pendaftaran', startDay: 1, endDay: 2, month: 8, year: 2026, category: 'pendaftaran', color: 'bg-[#D0E2FF] text-[#0043CE] border-2 border-black', lokasi: 'Portal SSCASN', status: 'Selesai' },
+            { id: 2, title: 'Hasil SKD CPNS', startDay: 7, endDay: 7, month: 8, year: 2026, category: 'pengumuman', color: 'bg-[#D9D9D9] text-black border-2 border-black', lokasi: 'Gedung Idham Chalid', status: 'Selesai' },
+            { id: 3, title: 'Ambil Kartu', startDay: 8, endDay: 8, month: 8, year: 2026, category: 'ujian', color: 'bg-[#FFD8B2] text-[#8A3B00] border-2 border-black', lokasi: 'Kantor Regional VIII BKN', status: 'Selesai' },
+            { id: 4, title: 'Hasil Ujian Dinas', startDay: 9, endDay: 9, month: 8, year: 2026, category: 'pengumuman', color: 'bg-[#008767] text-white border-2 border-black', lokasi: 'Website Resmi BKD', status: 'Selesai' },
+            { id: 5, title: 'Hasil Tahap 1', startDay: 12, endDay: 14, month: 8, year: 2026, category: 'pengumuman', color: 'bg-[#C1F1D2] text-[#00512C] border-2 border-black', lokasi: 'Portal SSCASN', status: 'Belum Mulai' },
+            { id: 6, title: 'Hasil Seleksi PPPK', startDay: 14, endDay: 14, month: 8, year: 2026, category: 'pengumuman', color: 'bg-[#0D1B2A] text-white border-2 border-black', lokasi: 'Poltekkes Kemenkes', status: 'Belum Mulai' },
+            { id: 7, title: 'Seminar Umum', startDay: 14, endDay: 16, month: 8, year: 2026, category: 'pendaftaran', color: 'bg-[#0077C0] text-white border-2 border-black', lokasi: 'BPSDM Provinsi Kalsel', status: 'Belum Mulai' }
         ];
 
         const colStartMap = { 1: 'col-start-1', 2: 'col-start-2', 3: 'col-start-3', 4: 'col-start-4', 5: 'col-start-5', 6: 'col-start-6', 7: 'col-start-7' };
@@ -196,28 +216,33 @@
             for (let w = 0; w <= 5; w++) {
                 const weekDays = allWeeks[w];
                 const weekRow = document.createElement('div');
-                weekRow.className = "relative grid grid-cols-7 gap-px bg-gray-200 min-h-[110px] md:min-h-[130px]";
+                weekRow.className = "grid grid-cols-1 grid-rows-1 bg-gray-200 border-b border-gray-300 min-h-[110px] md:min-h-[130px] relative";
 
                 const hasToday = weekDays.some(d => d.isToday);
                 const hasFirstDay = weekDays.some(d => d.isCurrent && d.date === 1);
-                
+
                 if (hasToday) {
                     weekRow.classList.add('scroll-target-row');
                 } else if (hasFirstDay) {
                     weekRow.classList.add('scroll-fallback-row');
                 }
 
-                weekRow.innerHTML = weekDays.map((d) => {
+                const daysLayer = document.createElement('div');
+                daysLayer.className = "col-start-1 row-start-1 grid grid-cols-7 gap-px";
+
+                daysLayer.innerHTML = weekDays.map((d) => {
                     const textClass = d.isCurrent ? 'text-gray-900 font-bold' : 'text-gray-400';
                     const todayBadge = d.isToday ? 'bg-[#F97316] text-white w-7 h-7 rounded-full flex items-center justify-center font-bold' : '';
                     const todayBorder = d.isToday ? 'border-2 border-[#F97316] z-10' : '';
                     
                     return `
-                        <div class="day-cell bg-white p-2.5 relative flex flex-col justify-start hover:bg-gray-50 cursor-pointer transition-colors ${todayBorder}" data-date="${d.date}" data-month-offset="${d.monthOffset}">
+                        <div class="day-cell bg-white p-2.5 relative flex flex-col justify-start hover:bg-gray-50 cursor-pointer transition-colors ${todayBorder} h-full" data-date="${d.date}" data-month-offset="${d.monthOffset}">
                             <div class="text-xs md:text-sm ${textClass} ${todayBadge}">${d.date}</div>
                         </div>
                     `;
                 }).join('');
+
+                weekRow.appendChild(daysLayer);
 
                 const weekEvents = [];
                 weekDays.forEach((d) => {
@@ -239,14 +264,14 @@
 
                 if (weekEvents.length > 0) {
                     const overlayGrid = document.createElement('div');
-                    overlayGrid.className = "absolute inset-x-0 top-12 bottom-1 grid grid-cols-7 gap-px pointer-events-none z-20 auto-rows-max space-y-1.5";
+                    overlayGrid.className = "col-start-1 row-start-1 grid grid-cols-7 gap-px pointer-events-none z-20 auto-rows-max space-y-1.5 mt-10 md:mt-12 pb-3";
 
                     weekEvents.forEach(item => {
                         const badgeEl = document.createElement('div');
                         badgeEl.className = `${colStartMap[item.startCol]} ${colSpanMap[item.span]} px-2`;
                         badgeEl.innerHTML = `
-                            <div class="${item.color} rounded-md h-7 md:h-8 px-3 flex items-center shadow-sm text-[11px] md:text-xs font-bold truncate">
-                                <span class="truncate pointer-events-auto hover:underline">${item.title}</span>
+                            <div class="cal-badge ${item.color} rounded-md h-7 md:h-8 px-3 flex items-center shadow-sm text-[11px] md:text-xs font-bold truncate pointer-events-auto cursor-pointer hover:opacity-90" data-id="${item.id}">
+                                <span class="truncate hover:underline pointer-events-none">${item.title}</span>
                             </div>
                         `;
                         overlayGrid.appendChild(badgeEl);
@@ -311,61 +336,95 @@
             chk.addEventListener('change', updateMonthUI);
         });
 
+        window.openEventDetail = function(eventId) {
+            const item = eventsData.find(x => x.id === parseInt(eventId));
+            if (!item) return;
+
+            document.getElementById('dtNama').innerText = item.title;
+            document.getElementById('dtKategori').innerText = item.category.replace('-', ' ');
+            document.getElementById('dtTanggal').innerText = 
+                (item.startDay === item.endDay) 
+                ? `${item.startDay} ${monthNames[item.month]} ${item.year}` 
+                : `${item.startDay} - ${item.endDay} ${monthNames[item.month]} ${item.year}`;
+            document.getElementById('dtLokasi').innerText = item.lokasi || '-';
+            document.getElementById('dtStatus').innerText = item.status || '-';
+
+            document.getElementById('dayEventsModal').classList.add('hidden');
+            document.getElementById('eventDetailModal').classList.remove('hidden');
+        };
+
         const handleGridClick = (e) => {
+            const badge = e.target.closest('.cal-badge');
+            if (badge) {
+                window.openEventDetail(badge.getAttribute('data-id'));
+                return;
+            }
+
             const cell = e.target.closest('.day-cell');
             if(!cell) return;
             
             const monthOffset = parseInt(cell.getAttribute('data-month-offset'));
             
-            if (monthOffset === -1) {
-                changeMonth(-1);
-                return;
-            } else if (monthOffset === 1) {
-                changeMonth(1);
-                return;
-            }
+            if (monthOffset === -1) { changeMonth(-1); return; }
+            if (monthOffset === 1) { changeMonth(1); return; }
             
             const dateVal = parseInt(cell.getAttribute('data-date'));
             const activeEventsForDay = getFilteredEvents().filter(ev => dateVal >= ev.startDay && dateVal <= ev.endDay);
             
-            const popup = document.getElementById('eventDetailPopup');
-            const title = document.getElementById('popupDateText');
-            const list = document.getElementById('popupEventList');
-            
-            title.innerText = `${dateVal} ${monthNames[currentMonth]} ${currentYear}`;
-            list.innerHTML = '';
+            document.getElementById('dayModalTitle').innerText = `Daftar Kegiatan (${dateVal} ${monthNames[currentMonth]} ${currentYear})`;
+            const listContainer = document.getElementById('dayModalListContainer');
+            listContainer.innerHTML = '';
             
             if(activeEventsForDay.length > 0) {
                 activeEventsForDay.forEach(ev => {
-                    const popupColor = ev.color.replace('border-2 border-black', '');
-                    list.innerHTML += `<div class="text-xs px-3 py-2 rounded-md ${popupColor} shadow-sm border border-gray-200 font-semibold mb-1">${ev.title}</div>`;
+                    const badgeColor = ev.color.replace('border-2 border-black', '');
+                    listContainer.innerHTML += `
+                        <div class="border-2 border-gray-200 bg-white p-3 rounded-lg flex justify-between items-center gap-3 shadow-sm hover:shadow-md transition">
+                            <div class="flex items-center gap-3 overflow-hidden">
+                                <div class="w-2.5 h-10 rounded-full shrink-0 ${badgeColor}"></div>
+                                <div class="truncate">
+                                    <h4 class="font-bold text-gray-900 text-sm md:text-base truncate">${ev.title}</h4>
+                                    <p class="text-xs text-gray-500 capitalize truncate">${ev.category} • ${ev.lokasi || '-'}</p>
+                                </div>
+                            </div>
+                            <button type="button" onclick="window.openEventDetail(${ev.id})" class="shrink-0 px-3 py-1.5 bg-white hover:bg-gray-100 border-2 border-black rounded-lg text-xs font-bold transition-colors">
+                                Detail
+                            </button>
+                        </div>`;
                 });
             } else {
-                list.innerHTML = `<div class="text-xs text-gray-500 italic px-2 py-1">Tidak ada jadwal tercatat pada hari ini.</div>`;
+                listContainer.innerHTML = `<div class="text-sm text-gray-500 italic p-4 text-center border-2 border-dashed border-gray-200 rounded-lg">Tidak ada jadwal tercatat pada hari ini.</div>`;
             }
 
-            popup.classList.remove('hidden');
-            
-            let topPos = e.pageY + 15;
-            let leftPos = e.pageX - 128; 
-            if(leftPos < 10) leftPos = 10;
-            
-            popup.style.top = topPos + 'px';
-            popup.style.left = leftPos + 'px';
+            document.getElementById('eventDetailModal').classList.add('hidden');
+            document.getElementById('dayEventsModal').classList.remove('hidden');
         };
 
         updateMonthUI();
-
+        
         document.addEventListener('click', (e) => {
             if(e.target.closest('#calendarGridContainer') || e.target.closest('#modalCalendarGridContainer')) {
                 handleGridClick(e);
-            } else if (!e.target.closest('#eventDetailPopup') && !e.target.closest('.filter-dropdown-container')) {
-                document.getElementById('eventDetailPopup').classList.add('hidden');
+            }
+            
+            if (e.target.id === 'dayEventsModal') {
+                document.getElementById('dayEventsModal').classList.add('hidden');
+            }
+            if (e.target.id === 'eventDetailModal') {
+                document.getElementById('eventDetailModal').classList.add('hidden');
             }
         });
 
-        document.getElementById('btnClosePopup').addEventListener('click', () => {
-            document.getElementById('eventDetailPopup').classList.add('hidden');
+        document.getElementById('btnCloseDayModal').addEventListener('click', () => {
+            document.getElementById('dayEventsModal').classList.add('hidden');
+        });
+
+        document.getElementById('btnCloseDetailModal').addEventListener('click', () => {
+            document.getElementById('eventDetailModal').classList.add('hidden');
+        });
+
+        document.getElementById('btnBackToDayModal').addEventListener('click', () => {
+            document.getElementById('eventDetailModal').classList.add('hidden');
         });
 
         document.getElementById('btnOpenModal').addEventListener('click', () => {
@@ -377,7 +436,6 @@
         document.getElementById('btnCloseModal').addEventListener('click', () => {
             document.getElementById('calendarModalOverlay').classList.add('hidden');
             document.body.style.overflow = '';
-            document.getElementById('eventDetailPopup').classList.add('hidden');
         });
     });
 </script>
