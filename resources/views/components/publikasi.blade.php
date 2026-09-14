@@ -43,7 +43,7 @@
                 <a href="#" class="text-sm font-semibold hover:underline leading-tight mt-0.5 block">Panduan Penggunaan Sistem CAT 2026 Lengkap</a>
             </div>
         </div>
-        <button class="w-full py-2 mt-auto border-2 border-black text-sm font-bold hover:bg-gray-100 transition-colors">Lihat Semua</button>
+        <a href="/berita" class="text-center w-full py-2 mt-auto border-2 border-black text-sm font-bold hover:bg-gray-100 transition-colors">Lihat Semua</a>
     </div>
 
     <div class="md:w-[72%] aspect-video border-2 border-black relative group/news bg-black overflow-hidden" id="newsFadeContainer">
@@ -71,9 +71,9 @@
                         <div class="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-[#0a0a0a]/90 to-transparent pointer-events-none"></div>
                     </div>
                     
-                    <button class="absolute bottom-0 right-0 z-20 py-1.5 px-4 bg-white/90 hover:bg-white text-black font-bold text-xs transition-colors shadow-lg border border-transparent hover:border-black backdrop-blur-sm translate-y-1/4">
+                    <a href="/berita/detail" class="absolute bottom-0 right-0 z-20 py-1.5 px-4 bg-white/90 hover:bg-white text-black font-bold text-xs transition-colors shadow-lg border border-transparent hover:border-black backdrop-blur-sm translate-y-1/4">
                         Baca selengkapnya...
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

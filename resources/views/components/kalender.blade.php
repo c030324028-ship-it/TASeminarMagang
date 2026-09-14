@@ -21,7 +21,7 @@
     }
 </style>
 
-<div class="bg-white border-2 border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] p-6 md:p-8 relative">
+<div class="bg-white border-2 border-black p-6 md:p-8 relative">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4 border-b-2 border-gray-100 pb-4">
         <div>
             <h3 class="text-2xl md:text-3xl font-bold text-gray-900">Agenda Jadwal</h3>

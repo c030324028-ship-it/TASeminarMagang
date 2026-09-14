@@ -16,10 +16,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-Route::get('/information', function () {
-    return view('information');
+Route::get('/berita', function () {
+    return view('news');
 });
 
-Route::get('/news', function () {
-    return view('news');
+Route::get('/berita/detail', function () {
+    return view('information');
 });

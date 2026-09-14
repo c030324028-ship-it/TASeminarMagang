@@ -51,7 +51,7 @@
                 <img src="assets/images/sample-carousel2.jpg" alt="Slide 2" class="absolute inset-0 w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20"></div>
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-10 pt-20">
-                    <h2 class="font-bold text-white text-3xl md:text-5xl drop-shadow-lg">Headline Berita Utama 2</h2>
+                    <h2 class="font-bold text-white text-3xl md:text-5xl drop-shadow-lg">Headline Utama 2</h2>
                 </div>
             </div>
 
@@ -60,7 +60,7 @@
                 <img src="assets/images/sample-carousel3.jpg" alt="Slide 3" class="absolute inset-0 w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/20"></div>
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-10 pt-20">
-                    <h2 class="font-bold text-white text-3xl md:text-5xl drop-shadow-lg">Headline Berita Utama 3</h2>
+                    <h2 class="font-bold text-white text-3xl md:text-5xl drop-shadow-lg">Headline Utama 3</h2>
                 </div>
             </div>
 
@@ -94,25 +94,25 @@
 
     <!-- SECTION AGENDA & KALENDER -->
     <section class="mb-16 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28" id="kalender">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-black pb-2">Agenda & Jadwal Kegiatan</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-black pb-2 text-center">Kalender Umum</h2>
         <x-kalender />
     </section>
 
     <!-- SECTION PUSAT INFORMASI -->
     <section class="mb-16 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28" id="publikasi">
-        <h2 class="text-3xl font-medium mb-6 text-center">Pusat Informasi</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-black pb-2 text-center">Pusat Informasi</h2>
         <x-publikasi />
     </section>
 
     <!-- SECTION TIMELINE -->
-    <section class="mb-16 w-full scroll-mt-28 bg-gray-200 border-y-2 border-black py-12 md:py-16 shadow-sm" id="timeline">
-        <div class="max-w-[1400px] mx-auto w-full px-4">
+    <section class="mb-16 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28" id="timeline">
+        <div class="max-w-[1400px] mx-auto w-full">
             <div class="text-center mb-12 md:mb-16">
                 <h2 class="text-4xl font-medium mb-2">Timeline Pelaksanaan</h2>
-                <p class="text-lg text-gray-700">Rangkaian Alur Kegiatan Seleksi 2026</p>
+                <p class="text-lg text-gray-700 border-b-2 border-black pb-2">Rangkaian Alur Kegiatan Seleksi 2026</p>
             </div>
             
-            <div class="wire-box bg-white p-8 py-24 md:px-32 md:py-32 relative shadow-sm border-2 border-black overflow-x-auto">
+            <div class="wire-box bg-white p-8 py-24 md:px-32 md:py-32 relative shadow-sm overflow-x-auto">
                 <div class="absolute top-1/2 left-20 right-20 h-1.5 bg-gray-600 -translate-y-1/2 z-0 min-w-[800px]"></div>
                 <div class="relative z-10 w-full flex justify-between items-center min-w-[800px]">
                     <div class="relative flex flex-col items-center justify-center">
@@ -146,8 +146,8 @@
     </section>
 
     <!-- SECTION KONTAK -->
-    <section class="mb-10 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28 bg-gray-300 border-2 border-black p-6 md:p-8 rounded-xl shadow-sm" id="kontak">
-        <h2 class="text-3xl font-medium mb-8 text-center">Hubungi Kami</h2>
+    <section class="mb-16 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28" id="kontak">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-black pb-2 text-center">Hubungi Kami</h2>
         <div class="flex flex-wrap justify-center gap-6">
             <div class="wire-box bg-white flex-1 min-w-[200px] h-56 flex flex-col items-center justify-center text-center p-6 hover:-translate-y-1 transition-transform border-2 border-black">
                 <svg class="w-12 h-12 mb-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path></svg>
