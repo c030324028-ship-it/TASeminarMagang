@@ -94,13 +94,13 @@
 
     <!-- SECTION AGENDA & KALENDER -->
     <section class="mb-16 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28" id="kalender">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-black pb-2 text-center">Kalender Umum</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 pb-2 text-center">Kalender Umum</h2>
         <x-kalender />
     </section>
 
     <!-- SECTION PUSAT INFORMASI -->
     <section class="mb-16 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28" id="publikasi">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-black pb-2 text-center">Pusat Informasi</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 pb-2 text-center">Pusat Informasi</h2>
         <x-publikasi />
     </section>
 
@@ -109,7 +109,7 @@
         <div class="max-w-[1400px] mx-auto w-full">
             <div class="text-center mb-12 md:mb-16">
                 <h2 class="text-4xl font-medium mb-2">Timeline Pelaksanaan</h2>
-                <p class="text-lg text-gray-700 border-b-2 border-black pb-2">Rangkaian Alur Kegiatan Seleksi 2026</p>
+                <p class="text-lg text-gray-700 pb-2">Rangkaian Alur Kegiatan Seleksi 2026</p>
             </div>
             
             <div class="wire-box bg-white p-8 py-24 md:px-32 md:py-32 relative shadow-sm overflow-x-auto">
@@ -147,7 +147,7 @@
 
     <!-- SECTION KONTAK -->
     <section class="mb-16 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28" id="kontak">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-black pb-2 text-center">Hubungi Kami</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 pb-2 text-center">Hubungi Kami</h2>
         <div class="flex flex-wrap justify-center gap-6">
             <div class="wire-box bg-white flex-1 min-w-[200px] h-56 flex flex-col items-center justify-center text-center p-6 hover:-translate-y-1 transition-transform border-2 border-black">
                 <svg class="w-12 h-12 mb-4 text-gray-700" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path></svg>
@@ -185,10 +185,10 @@
 
                     if (window.scrollY > heroHeight) {
                         navbar.classList.remove('bg-transparent', 'py-4');
-                        navbar.classList.add('bg-[#fca855]', 'shadow-md', 'py-2');
+                        navbar.classList.add('bg-[#fca855]/80', 'shadow-md', 'py-2');
                     } else {
                         navbar.classList.add('bg-transparent', 'py-4');
-                        navbar.classList.remove('bg-[#fca855]', 'shadow-md', 'py-2');
+                        navbar.classList.remove('bg-[#fca855]/80', 'shadow-md', 'py-2');
                     }
                 });
             }

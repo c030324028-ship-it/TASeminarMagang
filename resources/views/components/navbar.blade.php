@@ -4,16 +4,16 @@
     </div>
 
     <div class="flex items-center space-x-3">
-        <a href="/" class="px-4 py-2 relative text-lg font-medium text-white transition-colors duration-300 hover:text-white/80">
+        <a href="/" class="px-4 py-2 relative text-lg font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-orange-500 after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
             Beranda
         </a>
-        <a href="#kalender" class="px-4 py-2 relative text-lg font-medium text-white transition-colors duration-300 hover:text-white/80">
+        <a href="#kalender" class="px-4 py-2 relative text-lg font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-orange-500 after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
             Kalendar
         </a>
-        <a href="#publikasi" class="px-4 py-2 relative text-lg font-medium text-white transition-colors duration-300 hover:text-white/80">
+        <a href="#publikasi" class="px-4 py-2 relative text-lg font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-orange-500 after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
             Publikasi
         </a>
-        <a href="#kontak" class="px-4 py-2 relative text-lg font-medium text-white transition-colors duration-300 hover:text-white/80">
+        <a href="#kontak" class="px-4 py-2 relative text-lg font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-orange-500 after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
             Kontak
         </a>
 

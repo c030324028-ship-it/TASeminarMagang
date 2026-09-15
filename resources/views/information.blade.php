@@ -3,122 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Informasi</title>
+    <title>Detail Berita | Portal Informasi</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#F8F9FA] min-h-screen font-sans text-gray-900 flex flex-col">
+<body class="bg-[#F8F9FA] min-h-screen font-sans text-gray-900 flex flex-col pt-24">
 
-    <!-- NAVBAR ADAPTASI -->
-    <nav id="main-navbar" class="w-full sticky top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-4 bg-white border-b-2 border-black transition-all duration-300">
-        <div class="w-17 h-16 md:h-24 overflow-hidden flex-shrink-0 ml-0 md:ml-8">
-            <a href="/"><img src="../assets/images/logo-bkn.png" alt="Logo Instansi" class="h-full object-cover"></a>
+    <!-- NAVBAR DENGAN WARNA KONSISTEN #fca855/80 -->
+    <nav id="main-navbar" class="w-full fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-2 bg-[#fca855]/80 backdrop-blur-md shadow-md transition-all duration-300">
+        <div class="w-17 h-16 md:h-20 overflow-hidden flex-shrink-0 ml-0 md:ml-8">
+            <a href="/"><img src="/assets/images/logo-bkn.png" alt="Logo Instansi" class="h-full object-cover"></a>
         </div>
 
         <div class="hidden md:flex items-center space-x-3">
-            <a href="/" class="px-4 py-2 relative text-lg font-bold text-gray-900 transition-colors duration-300 hover:text-[#fca855]">
+            <a href="/" class="px-4 py-2 relative text-base font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
                 Beranda
             </a>
-            <a href="/#kalender" class="px-4 py-2 relative text-lg font-bold text-gray-900 transition-colors duration-300 hover:text-[#fca855]">
+            <a href="/#kalender" class="px-4 py-2 relative text-base font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
                 Kalendar
             </a>
-            <a href="/#publikasi" class="px-4 py-2 relative text-lg font-bold text-gray-900 transition-colors duration-300 hover:text-[#fca855]">
+            <a href="/berita" class="px-4 py-2 relative text-base font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
                 Publikasi
             </a>
-            <a href="/#kontak" class="px-4 py-2 relative text-lg font-bold text-gray-900 transition-colors duration-300 hover:text-[#fca855]">
+            <a href="/#kontak" class="px-4 py-2 relative text-base font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
                 Kontak
             </a>
 
             <div class="relative group">
-                <button class="px-4 py-2 relative flex items-center gap-2 text-lg font-bold text-gray-900 transition-colors duration-300 hover:text-[#fca855]">
+                <button class="px-4 py-2 relative flex items-center gap-1 text-base font-medium text-white transition-colors duration-300 hover:text-white/80">
                     Informasi
-                    <svg class="w-5 h-5 font-bold transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                    <svg class="w-4 h-4 font-bold transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </button>
 
-                <!-- Dropdown -->
-                <div class="absolute left-0 top-full mt-2 w-full min-w-[220px] rounded-lg bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 overflow-hidden border-2 border-black">
-                    <a href="/#timeline" class="block px-4 py-2.5 text-lg font-bold text-gray-700 transition-colors duration-300 hover:bg-orange-50 hover:text-[#fca855]">Timeline</a>
-                    <a href="#" class="block px-4 py-2.5 text-lg font-bold text-gray-700 transition-colors duration-300 hover:bg-orange-50 hover:text-[#fca855]">CASN</a>
-                    <a href="#" class="block px-4 py-2.5 text-lg font-bold text-gray-700 transition-colors duration-300 hover:bg-orange-50 hover:text-[#fca855]">Non-ASN</a>
-                    <a href="#" class="block px-4 py-2.5 text-lg font-bold text-gray-700 transition-colors duration-300 hover:bg-orange-50 hover:text-[#fca855]">Pengembangan Karir</a>
-                    <a href="#" class="block px-4 py-2.5 text-lg font-bold text-gray-700 transition-colors duration-300 hover:bg-orange-50 hover:text-[#fca855]">Sekolah Kedinasan</a>
+                <div class="absolute left-0 top-full mt-2 w-full min-w-[220px] rounded-lg bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 overflow-hidden shadow-lg border border-gray-100">
+                    <a href="/#timeline" class="block px-5 py-3 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-orange-50 hover:text-[#fca855]">Timeline</a>
+                    <a href="#" class="block px-5 py-3 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-orange-50 hover:text-[#fca855]">CASN</a>
+                    <a href="#" class="block px-5 py-3 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-orange-50 hover:text-[#fca855]">Non-ASN</a>
+                    <a href="#" class="block px-5 py-3 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-orange-50 hover:text-[#fca855]">Pengembangan Karir</a>
+                    <a href="#" class="block px-5 py-3 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-orange-50 hover:text-[#fca855]">Sekolah Kedinasan</a>
                 </div>
             </div>
         </div>
 
-        <a class="px-7 py-2 bg-white border-2 border-black text-black text-lg font-bold rounded-lg hover:bg-gray-100 hover:translate-y-px transition-all duration-300" href="/login">Login</a>
+        <a class="px-6 py-2 bg-white text-[#fca855] text-sm font-bold rounded-md shadow-sm transition-all duration-300 hover:bg-gray-50 hover:shadow-md" href="/login">Login</a>
     </nav>
 
-    <!-- MAIN CONTENT -->
-    <main class="flex-grow w-full max-w-5xl mx-auto px-4 py-10 md:py-16">
-        <!-- Tombol Kembali -->
-        <div class="mb-6">
-            <button onclick="history.back()" class="flex items-center gap-2 px-4 py-2 bg-white border-2 border-black rounded-lg font-bold hover:bg-gray-100 hover:translate-y-px transition-all">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-                Kembali
-            </button>
-        </div>
+    <!-- MAIN CONTAINER -->
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 py-8 md:py-12">
+        
+        <!-- BREADCRUMB -->
+        <nav class="flex text-sm text-gray-500 mb-6">
+            <a href="/" class="hover:text-[#fca855] transition-colors">Beranda</a>
+            <span class="mx-2">/</span>
+            <a href="/berita" class="hover:text-[#fca855] transition-colors">Publikasi</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-800 font-medium truncate">Persiapan Pelaksanaan SKD CASN 2026...</span>
+        </nav>
 
-        <div class="bg-white border-2 border-black overflow-hidden">
-            <!-- Header Judul -->
-            <div class="p-6 md:p-10 border-b-2 border-black text-center bg-gray-50">
-                <div class="inline-block px-3 py-1 mb-4 text-xs font-bold bg-[#D0E2FF] text-[#0043CE] border border-black rounded-full shadow-sm">
-                    PENGUMUMAN
-                </div>
-                <h1 class="text-2xl md:text-4xl font-black text-gray-900 leading-tight">
-                    Pengumuman Hasil Seleksi Administrasi CPNS Tahun 2026
-                </h1>
-                <div class="mt-4 flex items-center justify-center gap-4 text-sm font-medium text-gray-500">
-                    <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> 14 September 2026</span>
-                    <span class="flex items-center gap-1"><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg> BKD Kalsel</span>
-                </div>
-            </div>
-
-            <!-- Area Konten Utama -->
-            <div class="p-6 md:p-10 text-gray-800 leading-relaxed">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            
+            <!-- PANEL BACA (SISI KIRI) -->
+            <article class="lg:col-span-8 bg-white p-6 md:p-10 rounded-xl border border-gray-200 shadow-sm flex flex-col">
                 
-                <!-- Gambar Utama Artikel -->
-                <div class="mb-8 relative rounded-xl border-2 border-black overflow-hidden group">
-                    <img src="" alt="Ilustrasi Pengumuman" class="w-full h-56 md:h-[400px] object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out">
+                <!-- Judul Berita -->
+                <h1 class="text-2xl md:text-4xl font-bold text-gray-900 leading-snug mb-4">
+                    Persiapan Pelaksanaan Seleksi Kompetensi Dasar (SKD) CASN Tahun Anggaran 2026
+                </h1>
+
+                <!-- Meta Data -->
+                <div class="flex items-center gap-4 text-xs md:text-sm text-gray-500 pb-6 border-b border-gray-100 mb-6">
+                    <span class="flex items-center gap-1.5">
+                        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        15 September 2026
+                    </span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1.5">
+                        <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                        Panitia Seleksi Nasional
+                    </span>
                 </div>
 
-                <!-- Dinding Teks Terformat -->
-                <div class="space-y-6">
-                    <p class="font-semibold text-lg">Banjarbaru — Berdasarkan hasil verifikasi dokumen persyaratan pendaftaran Calon Pegawai Negeri Sipil (CPNS) di lingkungan Pemerintah Provinsi Kalimantan Selatan Tahun Anggaran 2026, berikut disampaikan beberapa hal penting:</p>
-                    
-                    <p>1. Pelamar yang nomor registrasi dan namanya tercantum dalam Lampiran I pengumuman ini dinyatakan <strong>LULUS</strong> Seleksi Administrasi.</p>
-                    
-                    <p>2. Pelamar yang nomor registrasi dan namanya <strong>tidak tercantum</strong> dalam Lampiran I dinyatakan <strong>TIDAK LULUS</strong> Seleksi Administrasi. Keterangan lebih lanjut mengenai alasan ketidaklulusan dapat dilihat melalui akun masing-masing pada portal SSCASN BKN.</p>
-                    
-                    <p>3. Peserta yang dinyatakan Tidak Lulus berhak melakukan sanggahan terhadap hasil Seleksi Administrasi selama 3 (tiga) hari mulai tanggal 15 s.d 17 September 2026. Sanggahan dilakukan secara online melalui portal resmi.</p>
-                    
-                    <!-- Kotak Perhatian -->
-                    <div class="bg-yellow-50 border-2 border-black rounded-lg p-5 mt-6 relative overflow-hidden">
-                        <div class="absolute top-0 left-0 w-2 h-full bg-yellow-400 border-r-2 border-black"></div>
-                        <div class="pl-4">
-                            <p class="font-black text-black flex items-center gap-2">
-                                <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
-                                PERHATIAN:
-                            </p>
-                            <p class="text-sm text-gray-800 mt-2 font-medium">Panitia seleksi instansi dapat menerima atau menolak alasan sanggahan yang diajukan oleh pelamar. Apabila sanggahan diterima, panitia akan mengumumkan ulang hasil seleksi administrasi.</p>
-                        </div>
-                    </div>
+                <!-- Gambar Utama Artikel -->
+                <div class="mb-8 rounded-lg overflow-hidden border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Ilustrasi Ujian CAT" class="w-full h-auto object-cover max-h-[450px]">
+                    <p class="text-xs text-gray-500 italic p-2 text-center bg-gray-50">Ilustrasi pelaksanaan Seleksi Kompetensi Dasar menggunakan fasilitas Computer Assisted Test (CAT).</p>
+                </div>
 
-                    <!-- Bagian Unduhan -->
-                    <div class="mt-10 p-5 bg-gray-50 border-2 border-black rounded-xl border-dashed">
-                        <p class="font-bold text-gray-900 mb-3">Dokumen Unduhan Terlampir:</p>
-                        <a href="#" class="inline-flex items-center gap-3 px-4 py-3 bg-white border-2 border-black rounded-lg hover:bg-gray-100 shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all group">
-                            <svg class="w-6 h-6 text-red-600 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9h2v9h-2z"></path></svg>
-                            <span class="text-sm font-bold">Lampiran_I_Hasil_Seleksi.pdf</span>
-                            <span class="text-xs font-medium text-gray-500 border-l-2 border-gray-300 pl-3 ml-1">2.4 MB</span>
+                <!-- Isi Artikel -->
+                <div class="space-y-5 text-gray-700 leading-relaxed text-base md:text-lg">
+                    <p>
+                        <strong>Jakarta Pusat</strong> – Menjelang pelaksanaan Seleksi Kompetensi Dasar (SKD) Calon Aparatur Sipil Negara (CASN) tahun anggaran 2026, Panitia Seleksi Nasional (Panselnas) mengimbau seluruh peserta untuk mempersiapkan diri dengan sebaik-baiknya. Ujian ini direncanakan akan diselenggarakan secara serentak di berbagai titik lokasi di seluruh Indonesia mulai akhir bulan ini.
+                    </p>
+                    <p>
+                        Pihak panitia menegaskan bahwa seluruh tahapan seleksi menggunakan sistem <em>Computer Assisted Test</em> (CAT). Sistem ini didesain secara khusus untuk menjamin objektivitas, akuntabilitas, dan transparansi, di mana nilai ujian dapat dipantau oleh publik secara langsung dan <em>real-time</em> saat ujian berlangsung.
+                    </p>
+                    <p>
+                        Untuk dapat mengikuti ujian, peserta diwajibkan membawa dokumen persyaratan administratif secara lengkap. Dokumen tersebut meliputi Kartu Tanda Penduduk (KTP) asli (atau Surat Keterangan Pengganti KTP dari Dukcapil) dan Kartu Peserta Ujian yang telah dicetak berwarna dengan kualitas yang baik agar *barcode* dapat dipindai oleh sistem.
+                    </p>
+                    <blockquote class="p-4 my-6 border-l-4 border-[#0a3d91] bg-blue-50/50 italic text-gray-800 rounded-r-md">
+                        "Kami berkomitmen penuh menyelenggarakan seleksi yang bersih, adil, dan transparan. Tidak ada pihak manapun yang bisa membantu kelulusan kecuali kemampuan dan persiapan dari peserta itu sendiri," tegas Ketua Tim Pelaksana Seleksi.
+                    </blockquote>
+                    <p>
+                        Terkait tata tertib di lokasi ujian, peserta diharuskan hadir paling lambat 90 menit sebelum jadwal sesi ujian masing-masing dimulai guna kelancaran proses registrasi, pemberian PIN peserta, hingga <em>body checking</em>. Peserta wajib mengenakan pakaian kemeja putih polos tanpa corak, bawahan (celana panjang atau rok) berwarna hitam formal, serta sepatu tertutup berawarna gelap.
+                    </p>
+                    <p>
+                        Sebagai pengingat tegas, selama berada di dalam ruang ujian, peserta dilarang keras membawa peralatan komunikasi, barang elektronik (termasuk jam tangan pintar), perhiasan logam, hingga ikat pinggang bergesper logam. Pelanggaran terhadap tata tertib ini akan berakibat pada diskualifikasi kepesertaan secara mutlak.
+                    </p>
+                </div>
+
+                <!-- SEKSI BAGIKAN INI (BARU DITAMBAHKAN) -->
+                <div class="mt-10 pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <span class="text-sm font-bold text-gray-800">Bagikan artikel ini:</span>
+                    <div class="flex gap-2">
+                        <!-- WhatsApp -->
+                        <button class="w-9 h-9 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:-translate-y-1 transition-transform shadow-sm" title="Bagikan ke WhatsApp">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </button>
+                        <!-- Facebook -->
+                        <button class="w-9 h-9 rounded-full bg-[#1877F2] text-white flex items-center justify-center hover:-translate-y-1 transition-transform shadow-sm" title="Bagikan ke Facebook">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </button>
+                        <!-- X (Twitter) -->
+                        <button class="w-9 h-9 rounded-full bg-black text-white flex items-center justify-center hover:-translate-y-1 transition-transform shadow-sm" title="Bagikan ke X">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                        </button>
+                        <!-- Salin Tautan -->
+                        <button class="w-9 h-9 rounded-full bg-gray-100 text-gray-700 flex items-center justify-center hover:-translate-y-1 hover:bg-gray-200 transition-all shadow-sm" title="Salin Tautan">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Navigasi Kembali -->
+                <div class="mt-8 pt-6 border-t border-gray-100 flex justify-between items-center mt-auto">
+                    <a href="/berita" class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-[#0a3d91] transition-colors">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                        Kembali ke Daftar Informasi
+                    </a>
+                </div>
+
+            </article>
+
+            <!-- SIDEBAR (SISI KANAN) -->
+            <aside class="lg:col-span-4 space-y-8">
+                
+                <!-- BAGIAN 1: TENTANG INI -->
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                    <h2 class="text-lg font-bold text-gray-900 border-b pb-3 mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-[#fca855]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Tentang Ini
+                    </h2>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Halaman ini menyajikan warta resmi, pengumuman, serta edaran kebijakan rekrutmen CASN dan PPPK yang dirilis secara sah oleh Panitia Seleksi Nasional demi keterbukaan informasi publik.
+                    </p>
+                </div>
+
+                <!-- BAGIAN 2: PUBLIKASI TERBARU -->
+                <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
+                    <h2 class="text-lg font-bold text-gray-900 border-b pb-3 mb-4 flex items-center gap-2">
+                        <svg class="w-5 h-5 text-[#0a3d91]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+                        Publikasi Terbaru
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <a href="#" class="group flex gap-3 items-start pb-3 border-b border-gray-100 last:border-0 last:pb-0">
+                            <span class="text-xs font-semibold text-[#fca855] bg-orange-50 px-2 py-1 rounded shrink-0 mt-0.5">14 Sep</span>
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-800 group-hover:text-[#0a3d91] transition-colors line-clamp-2 leading-snug">
+                                    Panduan Cetak Kartu Peserta Ujian dan Ketentuan Jadwal Sesi
+                                </h3>
+                            </div>
+                        </a>
+                        <a href="#" class="group flex gap-3 items-start pb-3 border-b border-gray-100 last:border-0 last:pb-0">
+                            <span class="text-xs font-semibold text-[#fca855] bg-orange-50 px-2 py-1 rounded shrink-0 mt-0.5">12 Sep</span>
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-800 group-hover:text-[#0a3d91] transition-colors line-clamp-2 leading-snug">
+                                    Pembaruan Sistem CAT BKN versi Terbaru untuk Kelancaran Ujian
+                                </h3>
+                            </div>
+                        </a>
+                        <a href="#" class="group flex gap-3 items-start pb-3 border-b border-gray-100 last:border-0 last:pb-0">
+                            <span class="text-xs font-semibold text-[#fca855] bg-orange-50 px-2 py-1 rounded shrink-0 mt-0.5">10 Sep</span>
+                            <div>
+                                <h3 class="text-sm font-medium text-gray-800 group-hover:text-[#0a3d91] transition-colors line-clamp-2 leading-snug">
+                                    Pengumuman Hasil Verifikasi Masa Sanggah Seleksi Administrasi
+                                </h3>
+                            </div>
                         </a>
                     </div>
                 </div>
-            </div>
+
+            </aside>
         </div>
+
+        <!-- SEKSI BAGIAN BAWAH: PUBLIKASI LAINNYA -->
+        <section class="mt-16 pt-10 border-t border-gray-200">
+            <div class="flex justify-between items-center mb-8">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">Publikasi Lainnya</h2>
+                    <p class="text-sm text-gray-500 mt-1">Artikel dan berita terkait yang mungkin relevan untuk Anda pelajari.</p>
+                </div>
+                <a href="/berita" class="text-sm font-semibold text-[#0a3d91] hover:underline hidden sm:block">Lihat Semua Publikasi &rarr;</a>
+            </div>
+
+            <!-- Grid 3 Kartu -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Berita" class="w-full h-40 object-cover">
+                    <div class="p-5 flex flex-col flex-grow">
+                        <span class="text-xs text-gray-400 mb-2">08 September 2026</span>
+                        <h3 class="font-semibold text-gray-900 leading-snug mb-3 line-clamp-2 hover:text-[#0a3d91] transition-colors">
+                            Evaluasi Perencanaan Kebutuhan Formasi ASN Nasional 2026
+                        </h3>
+                        <a href="/berita/detail" class="mt-auto text-xs font-bold text-[#0a3d91] hover:underline">Baca Selengkapnya &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Berita" class="w-full h-40 object-cover">
+                    <div class="p-5 flex flex-col flex-grow">
+                        <span class="text-xs text-gray-400 mb-2">05 September 2026</span>
+                        <h3 class="font-semibold text-gray-900 leading-snug mb-3 line-clamp-2 hover:text-[#0a3d91] transition-colors">
+                            Bimbingan Teknis Pengelolaan Sistem Kepegawaian Berbasis Merit untuk Panitia Daerah
+                        </h3>
+                        <a href="/berita/detail" class="mt-auto text-xs font-bold text-[#0a3d91] hover:underline">Baca Selengkapnya &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Berita" class="w-full h-40 object-cover">
+                    <div class="p-5 flex flex-col flex-grow">
+                        <span class="text-xs text-gray-400 mb-2">01 September 2026</span>
+                        <h3 class="font-semibold text-gray-900 leading-snug mb-3 line-clamp-2 hover:text-[#0a3d91] transition-colors">
+                            Optimalisasi Jaringan Komunikasi dan Keamanan Server di Wilayah Terdepan
+                        </h3>
+                        <a href="/berita/detail" class="mt-auto text-xs font-bold text-[#0a3d91] hover:underline">Baca Selengkapnya &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <x-footer />
+
 </body>
 </html>
