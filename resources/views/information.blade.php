@@ -8,45 +8,45 @@
 </head>
 <body class="bg-[#F8F9FA] min-h-screen font-sans text-gray-900 flex flex-col pt-24">
 
-    <!-- NAVBAR DENGAN WARNA KONSISTEN #fca855/80 -->
+    <!-- NAVBAR DENGAN WARNA #fca855/80 -->
     <nav id="main-navbar" class="w-full fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-8 py-2 bg-[#fca855]/80 backdrop-blur-md shadow-md transition-all duration-300">
         <div class="w-17 h-16 md:h-20 overflow-hidden flex-shrink-0 ml-0 md:ml-8">
-            <a href="/"><img src="/assets/images/logo-bkn.png" alt="Logo Instansi" class="h-full object-cover"></a>
+            <a href="/"><img src="../assets/images/logo-bkn.png" alt="Logo Instansi" class="h-full object-cover"></a>
         </div>
 
-        <div class="hidden md:flex items-center space-x-3">
-            <a href="/" class="px-4 py-2 relative text-base font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
-                Beranda
-            </a>
-            <a href="/#kalender" class="px-4 py-2 relative text-base font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
-                Kalendar
-            </a>
-            <a href="/berita" class="px-4 py-2 relative text-base font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
-                Publikasi
-            </a>
-            <a href="/#kontak" class="px-4 py-2 relative text-base font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
-                Kontak
-            </a>
+        <div class="flex items-center space-x-3">
+        <a href="/" class="px-4 py-2 relative text-lg font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-orange-500 after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
+            Beranda
+        </a>
+        <a href="/#kalender" class="px-4 py-2 relative text-lg font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-orange-500 after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
+            Kalendar
+        </a>
+        <a href="/#publikasi" class="px-4 py-2 relative text-lg font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-orange-500 after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
+            Publikasi
+        </a>
+        <a href="/#kontak" class="px-4 py-2 relative text-lg font-medium text-white transition-colors duration-300 hover:text-white/80 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-orange-500 after:transition-transform after:duration-300 after:origin-center hover:after:scale-x-100">
+            Kontak
+        </a>
 
-            <div class="relative group">
-                <button class="px-4 py-2 relative flex items-center gap-1 text-base font-medium text-white transition-colors duration-300 hover:text-white/80">
-                    Informasi
-                    <svg class="w-4 h-4 font-bold transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </button>
+        <div class="relative group">
+            <button class="px-4 py-2 relative flex items-center gap-2 text-lg font-medium text-white transition-colors duration-300 hover:text-white/80">
+                Informasi
+                <svg class="w-5 h-5 font-bold transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+                </svg>
+            </button>
 
-                <div class="absolute left-0 top-full mt-2 w-full min-w-[220px] rounded-lg bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 overflow-hidden shadow-lg border border-gray-100">
-                    <a href="/#timeline" class="block px-5 py-3 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-orange-50 hover:text-[#fca855]">Timeline</a>
-                    <a href="#" class="block px-5 py-3 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-orange-50 hover:text-[#fca855]">CASN</a>
-                    <a href="#" class="block px-5 py-3 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-orange-50 hover:text-[#fca855]">Non-ASN</a>
-                    <a href="#" class="block px-5 py-3 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-orange-50 hover:text-[#fca855]">Pengembangan Karir</a>
-                    <a href="#" class="block px-5 py-3 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-orange-50 hover:text-[#fca855]">Sekolah Kedinasan</a>
-                </div>
+            <div class="absolute left-0 top-full mt-1 w-full min-w-[220px] rounded-lg bg-white opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-in-out z-50 overflow-hidden shadow-xl border border-gray-100">
+                <a href="/#timeline" class="block px-4 py-2.5 text-lg font-medium text-gray-700 transition-colors duration-300 hover:bg-orange-50 hover:text-[#fca855]">Timeline</a>
+                <a href="/#" class="block px-4 py-2.5 text-lg font-medium text-gray-700 transition-colors duration-300 hover:bg-orange-50 hover:text-[#fca855]">CASN</a>
+                <a href="/#" class="block px-4 py-2.5 text-lg font-medium text-gray-700 transition-colors duration-300 hover:bg-orange-50 hover:text-[#fca855]">Non-ASN</a>
+                <a href="/#" class="block px-4 py-2.5 text-lg font-medium text-gray-700 transition-colors duration-300 hover:bg-orange-50 hover:text-[#fca855]">Pengembangan Karir</a>
+                <a href="/#" class="block px-4 py-2.5 text-lg font-medium text-gray-700 transition-colors duration-300 hover:bg-orange-50 hover:text-[#fca855]">Sekolah Kedinasan</a>
             </div>
         </div>
+    </div>
 
-        <a class="px-6 py-2 bg-white text-[#fca855] text-sm font-bold rounded-md shadow-sm transition-all duration-300 hover:bg-gray-50 hover:shadow-md" href="/login">Login</a>
+    <a class="px-7 py-2 border-2 border-white text-white text-lg font-medium rounded-lg transition-all duration-300 hover:text-[#fca855] hover:bg-white" href="/login">Login</a>
     </nav>
 
     <!-- MAIN CONTAINER -->
@@ -93,7 +93,7 @@
                 <!-- Isi Artikel -->
                 <div class="space-y-5 text-gray-700 leading-relaxed text-base md:text-lg">
                     <p>
-                        <strong>Jakarta Pusat</strong> – Menjelang pelaksanaan Seleksi Kompetensi Dasar (SKD) Calon Aparatur Sipil Negara (CASN) tahun anggaran 2026, Panitia Seleksi Nasional (Panselnas) mengimbau seluruh peserta untuk mempersiapkan diri dengan sebaik-baiknya. Ujian ini direncanakan akan diselenggarakan secara serentak di berbagai titik lokasi di seluruh Indonesia mulai akhir bulan ini.
+                        <strong>Jakarta Pusat</strong> - Menjelang pelaksanaan Seleksi Kompetensi Dasar (SKD) Calon Aparatur Sipil Negara (CASN) tahun anggaran 2026, Panitia Seleksi Nasional (Panselnas) mengimbau seluruh peserta untuk mempersiapkan diri dengan sebaik-baiknya. Ujian ini direncanakan akan diselenggarakan secara serentak di berbagai titik lokasi di seluruh Indonesia mulai akhir bulan ini.
                     </p>
                     <p>
                         Pihak panitia menegaskan bahwa seluruh tahapan seleksi menggunakan sistem <em>Computer Assisted Test</em> (CAT). Sistem ini didesain secara khusus untuk menjamin objektivitas, akuntabilitas, dan transparansi, di mana nilai ujian dapat dipantau oleh publik secara langsung dan <em>real-time</em> saat ujian berlangsung.
@@ -112,7 +112,7 @@
                     </p>
                 </div>
 
-                <!-- SEKSI BAGIKAN INI (BARU DITAMBAHKAN) -->
+                <!-- SEKSI BAGIKAN -->
                 <div class="mt-10 pt-6 border-t border-gray-100 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                     <span class="text-sm font-bold text-gray-800">Bagikan artikel ini:</span>
                     <div class="flex gap-2">

@@ -21,7 +21,8 @@
     }
 </style>
 
-<div class="bg-white border-2 border-black p-6 md:p-8 relative">
+<!-- Mengganti outer border hitam dengan desain card shadow -->
+<div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 md:p-8 relative">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4 border-b-2 border-gray-100 pb-4">
         <div>
             <h3 class="text-2xl md:text-3xl font-bold text-gray-900">Agenda Jadwal</h3>
@@ -29,11 +30,11 @@
         </div>
         
         <div class="relative filter-dropdown-container z-40">
-            <button class="px-4 py-2.5 bg-white border-2 border-black rounded-lg hover:bg-gray-100 transition-colors flex items-center gap-2 font-medium text-sm">
+            <button class="px-4 py-2.5 bg-white border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 transition-colors flex items-center gap-2 font-medium text-sm">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
                 Filter Kategori
             </button>
-            <div class="filter-dropdown absolute right-0 top-full mt-2 w-56 bg-white border-2 border-black rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] opacity-0 invisible transition-all duration-200 p-4">
+            <div class="filter-dropdown absolute right-0 top-full mt-2 w-56 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible transition-all duration-200 p-4">
                 <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">Tampilkan:</h4>
                 <label class="flex items-center gap-3 mb-3 cursor-pointer hover:bg-gray-50 p-1 -ml-1 rounded">
                     <input type="checkbox" id="chkPendaftaran" checked class="category-filter w-4 h-4 text-black border-gray-400 rounded focus:ring-black">
@@ -51,8 +52,8 @@
         </div>
     </div>
 
-    <div class="flex items-center justify-between mb-6 bg-gray-50 border border-gray-200 rounded-lg p-3">
-        <button id="btnPrevMonth" class="p-2 bg-white border border-gray-200 rounded-md hover:border-black transition-colors shrink-0">
+    <div class="flex items-center justify-between mb-6 bg-gray-50 border border-gray-200 rounded-xl p-3">
+        <button id="btnPrevMonth" class="p-2 bg-white border border-gray-200 rounded-lg hover:border-gray-400 transition-colors shrink-0 shadow-sm">
             <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
         </button>
         
@@ -65,7 +66,7 @@
             <span id="nextMonthLabel" class="flex-1 text-left text-sm md:text-base font-medium cursor-pointer text-gray-400 hover:text-black transition-colors hidden sm:block truncate pl-2 md:pl-4"></span>
         </div>
         
-        <button id="btnNextMonth" class="p-2 bg-white border border-gray-200 rounded-md hover:border-black transition-colors shrink-0">
+        <button id="btnNextMonth" class="p-2 bg-white border border-gray-200 rounded-lg hover:border-gray-400 transition-colors shrink-0 shadow-sm">
             <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
         </button>
     </div>
@@ -75,9 +76,9 @@
     </div>
 
     <div class="mt-6 flex justify-end">
-        <button id="btnOpenModal" class="p-2.5 bg-white border-2 border-black rounded-lg hover:bg-gray-100 hover:scale-105 transition-all flex items-center justify-center shadow-sm group" title="Lihat selengkapnya">
+        <button id="btnOpenModal" class="p-2.5 bg-white border border-gray-200 rounded-xl shadow-sm hover:bg-gray-50 hover:-translate-y-1 transition-all flex items-center justify-center group" title="Lihat selengkapnya">
             <span class="mr-2 text-sm font-bold">Lihat Semua Jadwal</span>
-            <svg class="w-5 h-5 text-black group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <svg class="w-5 h-5 text-gray-700 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"></path>
             </svg>
         </button>
@@ -99,7 +100,7 @@
 </div>
 
 <div id="dayEventsModal" class="hidden fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity">
-    <div class="relative w-full max-w-lg bg-white border-2 border-black rounded-xl p-5 shadow-[4px_4px_0_0_rgba(0,0,0,1)]">
+    <div class="relative w-full max-w-lg bg-white rounded-xl p-5">
         <button id="btnCloseDayModal" class="absolute top-4 right-4 p-1 text-gray-400 hover:text-black transition-colors">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
@@ -111,7 +112,7 @@
 </div>
 
 <div id="eventDetailModal" class="hidden fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity">
-    <div class="relative w-full max-w-md bg-white border-2 border-black rounded-xl p-5 shadow-[4px_4px_0_0_rgba(0,0,0,1)]">
+    <div class="relative w-full max-w-md bg-white rounded-xl p-5">
         <button id="btnCloseDetailModal" class="absolute top-4 right-4 p-1 text-gray-400 hover:text-black transition-colors">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
