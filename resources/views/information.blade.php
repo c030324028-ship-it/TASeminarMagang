@@ -110,6 +110,44 @@
                     <p>
                         Sebagai pengingat tegas, selama berada di dalam ruang ujian, peserta dilarang keras membawa peralatan komunikasi, barang elektronik (termasuk jam tangan pintar), perhiasan logam, hingga ikat pinggang bergesper logam. Pelanggaran terhadap tata tertib ini akan berakibat pada diskualifikasi kepesertaan secara mutlak.
                     </p>
+                <!-- ... penutup dari Isi Artikel ... -->
+                </div>
+
+                <!-- SEKSI LAMPIRAN DOKUMEN (TAMBAHAN BARU) -->
+                <div class="mt-8 border-t border-gray-100 pt-6">
+                    <h3 class="text-base font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <!-- Ikon Penjepit Kertas (Paperclip) -->
+                        <svg class="w-5 h-5 text-[#fca855]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"></path>
+                        </svg>
+                        Lampiran Dokumen
+                    </h3>
+                    
+                    <!-- Kartu File Lampiran -->
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center justify-between p-4 bg-gray-50 border border-gray-200 rounded-lg hover:bg-gray-100 transition-colors group">
+                            <div class="flex items-center gap-4 overflow-hidden">
+                                <!-- Ikon PDF -->
+                                <div class="flex-shrink-0 w-10 h-10 bg-red-100 text-red-600 rounded-md flex items-center justify-center">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div class="truncate">
+                                    <p class="text-sm font-semibold text-gray-800 truncate group-hover:text-[#0a3d91] transition-colors">Surat_Edaran_Pelaksanaan_SKD_CASN_2026.pdf</p>
+                                    <p class="text-xs text-gray-500 mt-0.5">PDF Document • 2.4 MB</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Tombol Unduh -->
+                            <a href="#" class="flex-shrink-0 ml-4 px-4 py-2 bg-[#0a3d91] text-white text-sm font-medium rounded-md hover:bg-blue-900 transition-colors flex items-center gap-2 shadow-sm">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                                </svg>
+                                Unduh
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- SEKSI BAGIKAN -->
