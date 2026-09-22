@@ -21,7 +21,6 @@
     }
 </style>
 
-<!-- Mengganti outer border hitam dengan desain card shadow -->
 <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 md:p-8 relative">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4 border-b-2 border-gray-100 pb-4">
         <div>
