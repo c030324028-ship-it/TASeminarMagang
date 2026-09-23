@@ -1,25 +1,14 @@
 <x-layouts.app title="Beranda | Aplikasi Web">
     
     <style>
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #f1f1f1; 
-            border-radius: 4px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #cbd5e1; 
-            border-radius: 4px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8; 
-        }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
         
         .filter-dropdown-container:hover .filter-dropdown,
         .filter-dropdown-container:focus-within .filter-dropdown {
-            opacity: 1;
-            visibility: visible;
+            opacity: 1; visibility: visible;
         }
     </style>
 
@@ -93,14 +82,15 @@
     </section>
 
     <!-- SECTION AGENDA & KALENDER -->
-    <section class="mb-16 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28" id="kalender">
+    <section class="mb-16 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28" id="kalender" data-aos="unfold-paper">
         <h2 class="text-3xl font-bold text-gray-900 mb-6 pb-2 text-center">Kalender Umum</h2>
         <x-kalender />
     </section>
 
     <!-- SECTION PUSAT INFORMASI -->
     <section class="mb-16 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28" id="publikasi">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6 pb-2 text-center">Pusat Informasi</h2>
+        <!-- Anchor ditambahkan ke judul -->
+        <h2 class="text-3xl font-bold text-gray-900 mb-6 pb-2 text-center" data-aos="fade-down" data-aos-anchor="#publikasi">Pusat Informasi</h2>
         <x-publikasi />
     </section>
 
@@ -111,30 +101,30 @@
 
     <!-- SECTION KONTAK -->
     <section class="mb-16 w-[calc(100%-2rem)] max-w-[1400px] mx-auto scroll-mt-28" id="kontak">
-        <h2 class="text-3xl font-bold text-gray-900 mb-8 pb-2 text-center">Hubungi Kami</h2>
+        <!-- Anchor ditambahkan ke judul -->
+        <h2 class="text-3xl font-bold text-gray-900 mb-8 pb-2 text-center" data-aos="fade-up" data-aos-anchor="#kontak">Hubungi Kami</h2>
         
-        <!-- Desain Kontak Disesuaikan dengan Timeline -->
         <div class="flex flex-wrap justify-center gap-6">
-            
-            <div class="bg-white flex-1 min-w-[200px] h-56 flex flex-col items-center justify-center text-center p-6 hover:-translate-y-2 transition-all duration-300 rounded-3xl shadow-xl border border-gray-100">
+            <!-- Anchor ditambahkan ke semua kartu kontak -->
+            <div data-aos="fade-up" data-aos-delay="100" data-aos-anchor="#kontak" class="bg-white flex-1 min-w-[200px] h-56 flex flex-col items-center justify-center text-center p-6 hover:-translate-y-2 transition-all duration-300 rounded-3xl shadow-xl border border-gray-100">
                 <svg class="w-12 h-12 mb-4 text-orange-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"></path></svg>
                 <h3 class="text-xl font-bold mb-2">Alamat</h3>
                 <p class="text-sm text-gray-600">Jl. Hasan Basri No. 1<br>Banjarbaru, Kalimantan Selatan</p>
             </div>
             
-            <div class="bg-white flex-1 min-w-[200px] h-56 flex flex-col items-center justify-center text-center p-6 hover:-translate-y-2 transition-all duration-300 rounded-3xl shadow-xl border border-gray-100">
+            <div data-aos="fade-up" data-aos-delay="200" data-aos-anchor="#kontak" class="bg-white flex-1 min-w-[200px] h-56 flex flex-col items-center justify-center text-center p-6 hover:-translate-y-2 transition-all duration-300 rounded-3xl shadow-xl border border-gray-100">
                 <svg class="w-12 h-12 mb-4 text-yellow-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path></svg>
                 <h3 class="text-xl font-bold mb-2">Email</h3>
                 <p class="text-sm text-gray-600">bantuan@instansi.go.id<br>info@instansi.go.id</p>
             </div>
             
-            <div class="bg-white flex-1 min-w-[200px] h-56 flex flex-col items-center justify-center text-center p-6 hover:-translate-y-2 transition-all duration-300 rounded-3xl shadow-xl border border-gray-100">
+            <div data-aos="fade-up" data-aos-delay="300" data-aos-anchor="#kontak" class="bg-white flex-1 min-w-[200px] h-56 flex flex-col items-center justify-center text-center p-6 hover:-translate-y-2 transition-all duration-300 rounded-3xl shadow-xl border border-gray-100">
                 <svg class="w-12 h-12 mb-4 text-blue-400" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-2.896-1.596-5.48-4.18-7.077-7.077l1.293-.97c.362-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"></path></svg>
                 <h3 class="text-xl font-bold mb-2">Telepon</h3>
                 <p class="text-sm text-gray-600">(0511) 1234-5678<br>0812-3456-7890</p>
             </div>
             
-            <div class="bg-white flex-1 min-w-[200px] h-56 flex flex-col items-center justify-center text-center p-6 hover:-translate-y-2 transition-all duration-300 rounded-3xl shadow-xl border border-gray-100">
+            <div data-aos="fade-up" data-aos-delay="400" data-aos-anchor="#kontak" class="bg-white flex-1 min-w-[200px] h-56 flex flex-col items-center justify-center text-center p-6 hover:-translate-y-2 transition-all duration-300 rounded-3xl shadow-xl border border-gray-100">
                 <svg class="w-12 h-12 mb-4 text-blue-600" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z"></path></svg>
                 <h3 class="text-xl font-bold mb-2">Konsultasi</h3>
                 <p class="text-sm text-gray-600">Senin - Jumat<br>08:00 - 15:00 WITA</p>

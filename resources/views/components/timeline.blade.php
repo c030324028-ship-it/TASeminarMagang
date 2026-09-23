@@ -1,11 +1,11 @@
 <div class="max-w-[1400px] mx-auto w-full py-12" id="timeline-interaktif">
-    <div class="text-center mb-10 md:mb-14">
+    <div class="text-center mb-10 md:mb-14" data-aos="fade-down">
         <h2 class="text-4xl font-bold text-gray-900 mb-3 tracking-tight">Timeline / Alur Pelaksanaan</h2>
         <p class="text-lg text-gray-600">Rangkaian Kegiatan Seleksi Terpadu BKN</p>
     </div>
 
     <!-- Panel Tombol Navigasi Kategori -->
-    <div class="flex flex-wrap justify-center gap-3 mb-10 px-4" id="category-tabs">
+    <div class="flex flex-wrap justify-center gap-3 mb-10 px-4" id="category-tabs" data-aos="fade-in" data-aos-delay="200" data-aos-anchor="#timeline-interaktif">
         <button onclick="renderTimeline('casn')" id="btn-casn" class="timeline-tab px-6 py-3 rounded-full font-bold text-sm md:text-base transition-all duration-300 bg-orange-500 text-white shadow-lg shadow-orange-500/30 scale-105">CASN (CPNS & PPPK)</button>
         <button onclick="renderTimeline('nonasn')" id="btn-nonasn" class="timeline-tab px-6 py-3 rounded-full font-bold text-sm md:text-base transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:bg-gray-50">Non-ASN</button>
         <button onclick="renderTimeline('karir')" id="btn-karir" class="timeline-tab px-6 py-3 rounded-full font-bold text-sm md:text-base transition-all duration-300 bg-white text-gray-600 border border-gray-200 hover:bg-gray-50">Pengembangan Karir</button>
@@ -13,7 +13,7 @@
     </div>
 
     <!-- Kontainer Timeline dengan Arrow Navigasi Kategori -->
-    <div class="relative w-full group/slider mt-12 px-4 md:px-12">
+    <div class="relative w-full group/slider mt-12 px-4 md:px-12" data-aos="fade-right" data-aos-delay="400" data-aos-anchor="#timeline-interaktif">
         
         <!-- Tombol Panah Kiri (Ganti Kategori Sebelumnya) -->
         <button id="btn-prev-category" class="absolute left-0 md:left-2 top-1/2 -translate-y-1/2 z-40 bg-white text-gray-800 p-3 md:p-4 rounded-full shadow-xl border border-gray-200 opacity-0 group-hover/slider:opacity-100 transition-all duration-300 hover:bg-orange-50 hover:text-orange-500 hover:scale-110 focus:outline-none -translate-x-4 group-hover/slider:translate-x-0 cursor-pointer">
@@ -27,7 +27,7 @@
             <div class="absolute top-1/2 left-8 right-8 md:left-12 md:right-12 h-2 bg-gradient-to-r from-orange-400 via-yellow-400 to-blue-500 rounded-full -translate-y-1/2 z-0 min-w-[900px]"></div>
             
             <!-- Area Render Poin Timeline -->
-            <div id="timeline-nodes-container" class="relative z-10 w-full flex justify-between items-center min-w-[900px] mx-auto">
+            <div id="timeline-nodes-container" class="relative z-10 w-full flex justify-between items-center min-w-[900px] mx-auto transition-opacity duration-300">
                 <!-- Poin-poin disuntikkan lewat JavaScript -->
             </div>
             
@@ -106,43 +106,47 @@
         }
 
         const container = document.getElementById('timeline-nodes-container');
-        container.innerHTML = ''; 
-        const data = timelineData[category];
+        
+        // Transisi halus saat pergantian tab
+        container.classList.add('opacity-0');
+        
+        setTimeout(() => {
+            container.innerHTML = ''; 
+            const data = timelineData[category];
 
-        data.forEach((item, index) => {
-            const isTop = index % 2 === 0;
-            const c = colorConfig[item.color];
-            
-            const posClass = isTop ? "bottom-full mb-6 group-hover:-translate-y-3" : "top-full mt-6 group-hover:translate-y-3";
-            const lineHtml = isTop ? `<div class="w-1 h-6 ${c.line} mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>` : `<div class="w-1 h-6 ${c.line} mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>`;
+            data.forEach((item, index) => {
+                const isTop = index % 2 === 0;
+                const c = colorConfig[item.color];
+                
+                const posClass = isTop ? "bottom-full mb-6 group-hover:-translate-y-3" : "top-full mt-6 group-hover:translate-y-3";
+                const lineHtml = isTop ? `<div class="w-1 h-6 ${c.line} mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>` : `<div class="w-1 h-6 ${c.line} mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>`;
 
-            const nodeHtml = `
-                <div class="relative flex flex-col items-center justify-center group cursor-help w-48 flex-shrink-0">
-                    
-                    <!-- Tooltip Hover Murni CSS (Tembus Batas Kontainer) -->
-                    <div class="absolute ${posClass} flex flex-col items-center transition-all duration-300 opacity-0 group-hover:opacity-100 invisible group-hover:visible z-[100] w-64 drop-shadow-2xl">
-                        ${isTop ? '' : lineHtml}
-                        <div class="bg-white p-4 rounded-2xl shadow-xl border-2 ${c.border} text-center">
-                            <h4 class="font-bold text-gray-800 mb-1 text-sm border-b pb-1">${item.title}</h4>
-                            <p class="text-xs text-gray-600 leading-relaxed">${item.desc}</p>
+                const nodeHtml = `
+                    <div class="relative flex flex-col items-center justify-center group cursor-help w-48 flex-shrink-0">
+                        
+                        <div class="absolute ${posClass} flex flex-col items-center transition-all duration-300 opacity-0 group-hover:opacity-100 invisible group-hover:visible z-[100] w-64 drop-shadow-2xl">
+                            ${isTop ? '' : lineHtml}
+                            <div class="bg-white p-4 rounded-2xl shadow-xl border-2 ${c.border} text-center">
+                                <h4 class="font-bold text-gray-800 mb-1 text-sm border-b pb-1">${item.title}</h4>
+                                <p class="text-xs text-gray-600 leading-relaxed">${item.desc}</p>
+                            </div>
+                            ${isTop ? lineHtml : ''}
                         </div>
-                        ${isTop ? lineHtml : ''}
-                    </div>
 
-                    <!-- Titik Timeline Utama dengan Ikon SVG -->
-                    <div class="w-12 h-12 rounded-full bg-white border-4 ${c.border} shadow-md flex items-center justify-center relative z-20 group-hover:scale-125 transition-transform duration-300 ${c.text}">
-                        ${svgIcons[item.icon]}
+                        <div class="w-12 h-12 rounded-full bg-white border-4 ${c.border} shadow-md flex items-center justify-center relative z-20 group-hover:scale-125 transition-transform duration-300 ${c.text}">
+                            ${svgIcons[item.icon]}
+                        </div>
+                        
+                        <div class="absolute ${isTop ? 'top-full mt-4' : 'bottom-full mb-4'} font-semibold text-gray-700 text-center w-full whitespace-nowrap text-sm">
+                            ${item.title}
+                        </div>
                     </div>
-                    
-                    <!-- Label Bawah/Atas Garis -->
-                    <div class="absolute ${isTop ? 'top-full mt-4' : 'bottom-full mb-4'} font-semibold text-gray-700 text-center w-full whitespace-nowrap text-sm">
-                        ${item.title}
-                    </div>
-                </div>
-            `;
-            
-            container.innerHTML += nodeHtml;
-        });
+                `;
+                
+                container.innerHTML += nodeHtml;
+            });
+            container.classList.remove('opacity-0');
+        }, 300);
     }
 
     document.addEventListener("DOMContentLoaded", () => {
